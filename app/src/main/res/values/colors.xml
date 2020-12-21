@@ -8,5 +8,6 @@
 
 <!--    Button Colors   -->
     <color name="addButtonColor">#F4516B</color>
+    <color name="brightColour">#FFFFFF</color>
 
 </resources>
