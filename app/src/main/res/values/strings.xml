@@ -13,5 +13,6 @@
     <string name="emailError">Digite um email</string>
     <string name="todoError">Deve conter um título</string>
     <string name="todoDescriptionError">Insira uma descrição</string>
+    <string name="emailItem">email:</string>
 
 </resources>
