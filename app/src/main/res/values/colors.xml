@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+<!--    Basic Colors    -->
     <color name="colorPrimary">#F25D89</color>
     <color name="colorPrimaryDark">#F4516B</color>
     <color name="colorAccent">#9F9F9F</color>
+
+<!--    Button Colors   -->
+    <color name="addButtonColor">#F4516B</color>
+
 </resources>
