@@ -5,4 +5,9 @@
 <!--    Descriptions    -->
     <string name="add_button">Add button</string>
 
+<!--    Hint    -->
+    <string name="email">email</string>
+    <string name="nome_da_tarefa">Nome da tarefa</string>
+    <string name="descricao_da_tarefa">Descrição da tarefa</string>
+
 </resources>
