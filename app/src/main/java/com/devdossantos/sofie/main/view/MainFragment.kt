@@ -1,4 +1,4 @@
-package com.devdossantos.sofie.view
+package com.devdossantos.sofie.main.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.devdossantos.sofie.view
+package com.devdossantos.sofie.newtodo.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
-import androidx.appcompat.widget.Toolbar
 import androidx.navigation.Navigation
 import com.devdossantos.sofie.R
 import com.google.android.material.textfield.TextInputLayout

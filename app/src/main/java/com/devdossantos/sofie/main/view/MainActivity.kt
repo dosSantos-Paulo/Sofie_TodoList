@@ -1,4 +1,4 @@
-package com.devdossantos.sofie.view
+package com.devdossantos.sofie.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
