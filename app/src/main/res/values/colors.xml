@@ -5,7 +5,7 @@
     <color name="colorPrimary">#F25D89</color>
     <color name="colorPrimaryDark">#F4516B</color>
     <color name="colorAccent">#9F9F9F</color>
-    <color name="defaltBackGround">#FFFFFF</color>
+    <color name="defoultBackGround">#FFFFFF</color>
     <color name="totalTranslucent">#00FFFFFF</color>
 
 <!--    Button Colors   -->
@@ -16,5 +16,6 @@
     <color name="hintColor">#8C8C8C</color>
     <color name="textPrimary">#F4516B</color>
     <color name="textSecundary">#F68698</color>
+    <color name="textBright">#FFFFFF</color>
 
 </resources>

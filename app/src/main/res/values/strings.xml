@@ -9,5 +9,9 @@
     <string name="email">email</string>
     <string name="nome_da_tarefa">Nome da tarefa</string>
     <string name="descricao_da_tarefa">Descrição da tarefa</string>
+    <string name="nova_tarefa">Nova tarefa</string>
+    <string name="emailError">Digite um email</string>
+    <string name="todoError">Deve conter um título</string>
+    <string name="todoDescriptionError">Insira uma descrição</string>
 
 </resources>
