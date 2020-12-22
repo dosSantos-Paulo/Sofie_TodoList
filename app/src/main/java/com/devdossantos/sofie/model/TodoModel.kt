@@ -1,4 +1,4 @@
-package com.devdossantos.sofie.main.model
+package com.devdossantos.sofie.model
 
 data class TodoModel (
     val title: String,

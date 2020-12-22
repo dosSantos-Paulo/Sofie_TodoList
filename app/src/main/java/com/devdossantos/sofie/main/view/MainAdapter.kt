@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.devdossantos.sofie.R
-import com.devdossantos.sofie.main.model.TodoModel
+import com.devdossantos.sofie.model.TodoModel
 
 class MainAdapter (
     private val dataSet: List<TodoModel>
