@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".newtodo.view.NewTodoFragment">
+    tools:context=".view.newtodo.NewTodoFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -20,12 +20,13 @@
 
             <ImageButton
                 android:id="@+id/btn_cancelNewTodo_newTodo"
-                android:layout_width="50dp"
+                android:layout_width="@dimen/ToolbatButtonWidth"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:background="@color/totalTranslucent"
                 android:src="@drawable/ic_baseline_close_24"
-                android:tint="@color/defaultBackGround" />
+                android:tint="@color/defaultBackGround"
+                android:contentDescription="@string/close_icon" />
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="0dp"
@@ -36,12 +37,13 @@
 
             <ImageButton
                 android:id="@+id/btn_proceed_newTodo"
-                android:layout_width="50dp"
+                android:layout_width="@dimen/ToolbatButtonWidth"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:background="@color/totalTranslucent"
                 android:src="@drawable/ic_baseline_check_24"
-                android:tint="@color/defaultBackGround" />
+                android:tint="@color/defaultBackGround"
+                android:contentDescription="@string/send_assignment_icon" />
 
         </LinearLayout>
 

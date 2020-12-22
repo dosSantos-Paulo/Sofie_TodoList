@@ -3,7 +3,7 @@
 
     <item>
         <shape android:shape="rectangle">
-            <size android:width="@dimen/logo1_size" android:height="@dimen/logo1_size" />
+            <size android:width="@dimen/logo1Size" android:height="@dimen/logo1Size" />
             <corners android:radius="@dimen/logoRadius" />
             <gradient android:angle="-45" android:endColor="@color/logoEndColor" android:startColor="@color/logoStartColor" />
         </shape>

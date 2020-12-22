@@ -6,7 +6,7 @@
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.devdossantos.sofie.main.view.MainFragment"
+        android:name="com.devdossantos.sofie.view.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/newTodoFragment"
-        android:name="com.devdossantos.sofie.newtodo.view.NewTodoFragment"
+        android:name="com.devdossantos.sofie.view.newtodo.NewTodoFragment"
         android:label="fragment_new_todo"
         tools:layout="@layout/fragment_new_todo" />
 </navigation>

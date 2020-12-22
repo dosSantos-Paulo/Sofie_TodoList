@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".splash.view.SplashScreen">
+    tools:context=".view.splashscreen.SplashScreen">
 
     <ImageView
         android:id="@+id/image_logo1_splash"
@@ -15,17 +15,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:alpha="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/logo_shape" />
 
     <ImageView
         android:id="@+id/image_logo2_splash"
-        android:layout_width="@dimen/logo2_size"
-        android:layout_height="@dimen/logo2_size"
+        android:layout_width="@dimen/logo2Size"
+        android:layout_height="@dimen/logo2Size"
         android:src="@drawable/ic_baseline_check_24"
         app:layout_constraintBottom_toBottomOf="@+id/image_logo1_splash"
         app:layout_constraintEnd_toEndOf="@+id/image_logo1_splash"
         app:layout_constraintStart_toStartOf="@+id/image_logo1_splash"
         app:layout_constraintTop_toTopOf="@+id/image_logo1_splash"
-        app:tint="@color/defaultBackGround" />
+        app:tint="@color/defaultBackGround"
+        android:contentDescription="@string/logo_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
