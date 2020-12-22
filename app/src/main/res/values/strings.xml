@@ -4,6 +4,10 @@
 
     <!--    Descriptions    -->
     <string name="add_button">Add button</string>
+    <string name="logo_shape">Logo Shape</string>
+    <string name="logo_image">Logo Image</string>
+    <string name="close_icon">Close Icon</string>
+    <string name="send_assignment_icon">Send assignment Icon</string>
 
     <!--    Strings    -->
     <string name="email">email</string>
