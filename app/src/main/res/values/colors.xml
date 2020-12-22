@@ -5,7 +5,7 @@
     <color name="colorPrimary">#F25D89</color>
     <color name="colorPrimaryDark">#F4516B</color>
     <color name="colorAccent">#9F9F9F</color>
-    <color name="defoultBackGround">#FFFFFF</color>
+    <color name="defaultBackGround">#FFFFFF</color>
     <color name="totalTranslucent">#00FFFFFF</color>
 
 <!--    Button Colors   -->
@@ -17,5 +17,7 @@
     <color name="textPrimary">#F4516B</color>
     <color name="textSecundary">#F68698</color>
     <color name="textBright">#FFFFFF</color>
+    <color name="logoEndColor">#EE81E0</color>
+    <color name="logoStartColor">#F3506A</color>
 
 </resources>

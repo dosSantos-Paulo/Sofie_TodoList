@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <size android:width="@dimen/logo1_size" android:height="@dimen/logo1_size" />
+            <corners android:radius="@dimen/logoRadius" />
+            <gradient android:angle="-45" android:endColor="@color/logoEndColor" android:startColor="@color/logoStartColor" />
+        </shape>
+    </item>
+
+</selector>

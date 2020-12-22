@@ -25,14 +25,14 @@
                 android:layout_gravity="center_vertical"
                 android:background="@color/totalTranslucent"
                 android:src="@drawable/ic_baseline_close_24"
-                android:tint="@color/defoultBackGround" />
+                android:tint="@color/defaultBackGround" />
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:title="@string/nova_tarefa"
-                app:titleTextColor="@color/defoultBackGround" />
+                app:titleTextColor="@color/defaultBackGround" />
 
             <ImageButton
                 android:id="@+id/btn_proceed_newTodo"
@@ -41,7 +41,7 @@
                 android:layout_gravity="center_vertical"
                 android:background="@color/totalTranslucent"
                 android:src="@drawable/ic_baseline_check_24"
-                android:tint="@color/defoultBackGround" />
+                android:tint="@color/defaultBackGround" />
 
         </LinearLayout>
 
