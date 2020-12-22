@@ -10,12 +10,14 @@
     <string name="nome_da_tarefa">Nome da tarefa</string>
     <string name="descricao_da_tarefa">Descrição da tarefa</string>
     <string name="nova_tarefa">Nova tarefa</string>
+    <string name="itemSeparation">:</string>
 
-    <!--    Error   -->
+    <!--    Input Errors   -->
     <string name="emailError">Digite um email</string>
     <string name="todoError">Deve conter um título</string>
     <string name="todoDescriptionError">Insira uma descrição</string>
-    <string name="itemSeparation">:</string>
+
+    <!--    Post Response   -->
     <string name="successMessage">Enviado com sucesso</string>
     <string name="failMessage">Problemas com o servidor, tente novamente mais tarde</string>
 

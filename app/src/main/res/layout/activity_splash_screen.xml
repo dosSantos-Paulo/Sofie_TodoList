@@ -19,8 +19,8 @@
 
     <ImageView
         android:id="@+id/image_logo2_splash"
-        android:layout_width="@dimen/logo2_size"
-        android:layout_height="@dimen/logo2_size"
+        android:layout_width="@dimen/logo2Size"
+        android:layout_height="@dimen/logo2Size"
         android:src="@drawable/ic_baseline_check_24"
         app:layout_constraintBottom_toBottomOf="@+id/image_logo1_splash"
         app:layout_constraintEnd_toEndOf="@+id/image_logo1_splash"
