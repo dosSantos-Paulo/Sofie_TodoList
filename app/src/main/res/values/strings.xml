@@ -16,5 +16,7 @@
     <string name="todoError">Deve conter um título</string>
     <string name="todoDescriptionError">Insira uma descrição</string>
     <string name="itemSeparation">:</string>
+    <string name="successMessage">Enviado com sucesso</string>
+    <string name="failMessage">Problemas com o servidor, tente novamente mais tarde</string>
 
 </resources>

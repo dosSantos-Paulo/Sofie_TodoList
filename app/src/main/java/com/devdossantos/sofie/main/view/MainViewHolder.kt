@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.devdossantos.sofie.R
-import com.devdossantos.sofie.main.model.TodoModel
+import com.devdossantos.sofie.model.TodoModel
 
 class MainViewHolder(
     view: View
