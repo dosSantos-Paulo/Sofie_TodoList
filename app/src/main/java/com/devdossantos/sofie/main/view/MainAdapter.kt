@@ -7,7 +7,7 @@ import com.devdossantos.sofie.R
 import com.devdossantos.sofie.model.TodoModel
 
 class MainAdapter (
-    private val dataSet: List<TodoModel>
+    private val dataSet: MutableList<TodoModel>
 ): RecyclerView.Adapter<MainViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)

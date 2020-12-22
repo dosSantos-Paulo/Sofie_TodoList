@@ -23,7 +23,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_main"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="@dimen/defautPadding"
         android:layout_marginLeft="@dimen/defautPadding"
         android:layout_marginTop="@dimen/defautPadding"
@@ -37,7 +37,7 @@
         android:id="@+id/btn_addNewTodo_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/marginMed"
         android:backgroundTint="@color/addButtonColor"
         android:contentDescription="@string/add_button"
         app:layout_constraintBottom_toBottomOf="parent"

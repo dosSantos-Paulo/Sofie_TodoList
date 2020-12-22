@@ -5,16 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.devdossantos.sofie.R
 import com.devdossantos.sofie.model.TodoModel
+import com.devdossantos.sofie.repository.TodoRepository
+import com.devdossantos.sofie.viewmodel.TodoViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class MainFragment : Fragment() {
+
+    private lateinit var _viewModel: TodoViewModel
+    private lateinit var _listAdapter: MainAdapter
+    private var _todoList = mutableListOf<TodoModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,26 +34,31 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //        Test Adapter
-
-        val todo1 = TodoModel("Tarefa 1", "paulo@teste.com", "Este é um item de teste, e deve ser ignorado futuramente")
-        val todo2 = TodoModel("Tarefa 2", "jon@teste.com", "Este é um item de teste, e deve ser ignorado futuramente")
-        val todo3 = TodoModel("Tarefa 3", "kate@teste.com", "Este é um item de teste, e deve ser ignorado futuramente")
-
-//        Test Adapter
 
         val navController = Navigation.findNavController(view)
         val addButton = view.findViewById<FloatingActionButton>(R.id.btn_addNewTodo_main)
-        val viewManager = LinearLayoutManager(view.context)
+
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_main)
-        val mainAdapter = MainAdapter(listOf(todo1, todo2, todo3))
+        val viewManager = LinearLayoutManager(view.context)
+
+        _listAdapter = MainAdapter(_todoList)
 
         recyclerView.apply {
             setHasFixedSize(true)
             layoutManager = viewManager
-            adapter = mainAdapter
+            adapter = _listAdapter
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         }
+
+        _viewModel = ViewModelProvider(
+            this,
+            TodoViewModel.TodoViewModelFactory(TodoRepository())
+        ).get(TodoViewModel::class.java)
+
+        _viewModel.getList().observe(viewLifecycleOwner, {
+            _todoList.addAll(it)
+            _listAdapter.notifyDataSetChanged()
+        })
 
 
         addButton.setOnClickListener {
