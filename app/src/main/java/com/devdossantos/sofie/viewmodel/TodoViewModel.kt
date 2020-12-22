@@ -11,19 +11,19 @@ class TodoViewModel(
     private val repository: TodoRepository
 ) : ViewModel() {
 
-    fun getList (email: String) = liveData (Dispatchers.IO) {
+    fun getList(email: String) = liveData(Dispatchers.IO) {
         val response = repository.getList(email)
         emit(response.data)
     }
 
-    fun post (post: Post) = liveData (Dispatchers.IO) {
+    fun post(post: Post) = liveData(Dispatchers.IO) {
         val response = repository.postNewTodo(post).success
         emit(response)
     }
 
-    class TodoViewModelFactory (
+    class TodoViewModelFactory(
         private val repository: TodoRepository
-    ): ViewModelProvider.Factory {
+    ) : ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             return TodoViewModel(repository) as T
         }
