@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/marginMed"
+    android:layout_marginBottom="@dimen/marginMed">
+
+    <TextView
+        android:id="@+id/txt_todoTitle_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Tarefa 1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_todoTitle_item">
+
+        <TextView
+            android:id="@+id/txt_todoMail_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="paulo@teste.com"
+            android:textColor="@color/hintColor" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/itemSeparation"
+            android:textColor="@color/hintColor" />
+
+        <TextView
+            android:id="@+id/txt_todoDescription_item"
+            android:textColor="@color/hintColor"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/marginMin"
+            android:layout_marginEnd="@dimen/defautPadding"
+            android:layout_marginRight="@dimen/defautPadding"
+            android:layout_height="wrap_content"
+            tools:text="@tools:sample/lorem/random"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/marginMin" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
