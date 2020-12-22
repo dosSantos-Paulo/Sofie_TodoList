@@ -30,16 +30,28 @@ class MainFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val navController = Navigation.findNavController(view)
         val addButton = view.findViewById<FloatingActionButton>(R.id.btn_addNewTodo_main)
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_main)
-        val viewManager = LinearLayoutManager(view.context)
+        getRecyclearView(view)
 
+        getViewModel()
+
+        addButton.setOnClickListener {
+            navController.navigate(R.id.action_mainFragment_to_newTodoFragment)
+            _todoList.clear()
+        }
+
+    }
+
+
+    private fun getRecyclearView(view: View) {
+
+        val viewManager = LinearLayoutManager(view.context)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_main)
         _listAdapter = MainAdapter(_todoList.asReversed())
 
         recyclerView.apply {
@@ -48,6 +60,10 @@ class MainFragment : Fragment() {
             adapter = _listAdapter
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
         }
+
+    }
+
+    private fun getViewModel() {
 
         _viewModel = ViewModelProvider(
             this,
@@ -58,12 +74,6 @@ class MainFragment : Fragment() {
             _todoList.addAll(it)
             _listAdapter.notifyDataSetChanged()
         })
-
-
-        addButton.setOnClickListener {
-            navController.navigate(R.id.action_mainFragment_to_newTodoFragment)
-            _todoList.clear()
-        }
 
     }
 
