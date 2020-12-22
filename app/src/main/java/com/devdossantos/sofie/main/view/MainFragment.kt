@@ -63,6 +63,7 @@ class MainFragment : Fragment() {
 
         addButton.setOnClickListener {
             navController.navigate(R.id.action_mainFragment_to_newTodoFragment)
+            _todoList.clear()
         }
 
     }

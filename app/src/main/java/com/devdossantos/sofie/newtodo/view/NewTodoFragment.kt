@@ -8,13 +8,18 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.devdossantos.sofie.R
+import com.devdossantos.sofie.model.Post
+import com.devdossantos.sofie.repository.TodoRepository
+import com.devdossantos.sofie.viewmodel.TodoViewModel
 import com.google.android.material.textfield.TextInputLayout
 
 
 class NewTodoFragment : Fragment() {
 
+    private lateinit var _viewModel: TodoViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,11 +55,30 @@ class NewTodoFragment : Fragment() {
                 todoDescription?.error = getString(R.string.todoDescriptionError)
             }
             if (!isNullText(email) && !isNullText(todo) && !isNullText(todoDescription)) {
-                Toast.makeText(view.context, "Enviou nova tarefa", Toast.LENGTH_SHORT).show()
 
-                email?.text?.clear()
-                todo?.text?.clear()
-                todoDescription?.text?.clear()
+                val newPost = Post(
+                    todo!!.text.toString(),
+                    email!!.text.toString(),
+                    todoDescription!!.text.toString()
+                )
+
+                _viewModel = ViewModelProvider(
+                    this,
+                    TodoViewModel.TodoViewModelFactory(TodoRepository())
+                ).get(TodoViewModel::class.java)
+
+                _viewModel.post(newPost).observe(viewLifecycleOwner, {
+                    when (it) {
+                        true -> Toast.makeText(view.context, getString(R.string.successMessage), Toast.LENGTH_SHORT).show()
+                        false -> Toast.makeText(view.context, getString(R.string.failMessage), Toast.LENGTH_LONG).show()
+                    }
+                })
+
+
+
+                email.text.clear()
+                todo.text.clear()
+                todoDescription.text.clear()
             }
 
         }

@@ -3,6 +3,7 @@ package com.devdossantos.sofie.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.liveData
+import com.devdossantos.sofie.model.Post
 import com.devdossantos.sofie.repository.TodoRepository
 import kotlinx.coroutines.Dispatchers
 
@@ -13,6 +14,11 @@ class TodoViewModel(
     fun getList () = liveData (Dispatchers.IO) {
         val response = repository.getList()
         emit(response.data)
+    }
+
+    fun post (post: Post) = liveData (Dispatchers.IO) {
+        val response = repository.postNewTodo(post).success
+        emit(response)
     }
 
     class TodoViewModelFactory (
