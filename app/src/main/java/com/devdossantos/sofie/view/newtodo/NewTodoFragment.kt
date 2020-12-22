@@ -29,31 +29,24 @@ class NewTodoFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         super.onViewCreated(view, savedInstanceState)
+
         val navController = Navigation.findNavController(view)
         val closeButton = view.findViewById<ImageButton>(R.id.btn_cancelNewTodo_newTodo)
         val proceedButton = view.findViewById<ImageButton>(R.id.btn_proceed_newTodo)
 
         val email = view.findViewById<TextInputLayout>(R.id.editText_email_newTodo).editText
         val todo = view.findViewById<TextInputLayout>(R.id.editText_todoName_newTodo).editText
-        val todoDescription =
-            view.findViewById<TextInputLayout>(R.id.editText_todoDescription_newTodo).editText
+        val todoDescription = view.findViewById<TextInputLayout>(R.id.editText_todoDescription_newTodo).editText
 
         closeButton.setOnClickListener {
             navController.popBackStack()
         }
 
         proceedButton.setOnClickListener {
-            if (isNullText(email)) {
-                email?.error = getString(R.string.emailError)
-            }
-            if (isNullText(todo)) {
-                todo?.error = getString(R.string.todoError)
-            }
-            if (isNullText(todoDescription)){
-                todoDescription?.error = getString(R.string.todoDescriptionError)
-            }
+
+            nullValidation(email, todo, todoDescription)
+
             if (!isNullText(email) && !isNullText(todo) && !isNullText(todoDescription)) {
 
                 val newPost = Post(
@@ -62,25 +55,61 @@ class NewTodoFragment : Fragment() {
                     todoDescription!!.text.toString()
                 )
 
-                _viewModel = ViewModelProvider(
-                    this,
-                    TodoViewModel.TodoViewModelFactory(TodoRepository())
-                ).get(TodoViewModel::class.java)
-
-                _viewModel.post(newPost).observe(viewLifecycleOwner, {
-                    when (it) {
-                        true -> Toast.makeText(view.context, getString(R.string.successMessage), Toast.LENGTH_SHORT).show()
-                        false -> Toast.makeText(view.context, getString(R.string.failMessage), Toast.LENGTH_LONG).show()
-                    }
-                })
-
-
+                getViewModel(newPost, view)
 
                 email.text.clear()
                 todo.text.clear()
                 todoDescription.text.clear()
             }
 
+        }
+
+    }
+
+    private fun nullValidation(
+        email: EditText?,
+        todo: EditText?,
+        todoDescription: EditText?
+    ) {
+
+        if (isNullText(email)) {
+            email?.error = getString(R.string.emailError)
+        }
+        if (isNullText(todo)) {
+            todo?.error = getString(R.string.todoError)
+        }
+        if (isNullText(todoDescription)) {
+            todoDescription?.error = getString(R.string.todoDescriptionError)
+        }
+
+    }
+
+    private fun getViewModel(newPost: Post, view: View) {
+
+        _viewModel = ViewModelProvider(
+            this,
+            TodoViewModel.TodoViewModelFactory(TodoRepository())
+        ).get(TodoViewModel::class.java)
+
+        _viewModel.post(newPost).observe(viewLifecycleOwner, {
+            postResponse(it, view)
+        })
+
+    }
+
+    private fun postResponse(it: Boolean?, view: View) {
+
+        when (it) {
+            true -> Toast.makeText(
+                view.context,
+                getString(R.string.successMessage),
+                Toast.LENGTH_SHORT
+            ).show()
+            false -> Toast.makeText(
+                view.context,
+                getString(R.string.failMessage),
+                Toast.LENGTH_LONG
+            ).show()
         }
 
     }
