@@ -1,8 +1,7 @@
-package com.devdossantos.sofie.main.view
+package com.devdossantos.sofie
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.devdossantos.sofie.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
