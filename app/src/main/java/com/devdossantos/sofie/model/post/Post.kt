@@ -1,4 +1,4 @@
-package com.devdossantos.sofie.model
+package com.devdossantos.sofie.model.post
 
 data class Post (
     var title: String,

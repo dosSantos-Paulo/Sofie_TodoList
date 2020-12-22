@@ -1,4 +1,4 @@
-package com.devdossantos.sofie.main.view
+package com.devdossantos.sofie.view.main
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.devdossantos.sofie.R
-import com.devdossantos.sofie.model.TodoModel
+import com.devdossantos.sofie.model.get.TodoModel
 import com.devdossantos.sofie.repository.TodoRepository
 import com.devdossantos.sofie.viewmodel.TodoViewModel
 import com.google.android.material.floatingactionbutton.FloatingActionButton

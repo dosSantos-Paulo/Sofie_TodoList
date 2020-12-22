@@ -1,4 +1,4 @@
-package com.devdossantos.sofie.model
+package com.devdossantos.sofie.model.get
 
 data class TodoModel (
     var description: String,

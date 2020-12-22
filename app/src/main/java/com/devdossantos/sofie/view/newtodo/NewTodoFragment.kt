@@ -1,4 +1,4 @@
-package com.devdossantos.sofie.newtodo.view
+package com.devdossantos.sofie.view.newtodo
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.devdossantos.sofie.R
-import com.devdossantos.sofie.model.Post
+import com.devdossantos.sofie.model.post.Post
 import com.devdossantos.sofie.repository.TodoRepository
 import com.devdossantos.sofie.viewmodel.TodoViewModel
 import com.google.android.material.textfield.TextInputLayout

@@ -1,10 +1,10 @@
-package com.devdossantos.sofie.main.view
+package com.devdossantos.sofie.view.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.devdossantos.sofie.R
-import com.devdossantos.sofie.model.TodoModel
+import com.devdossantos.sofie.model.get.TodoModel
 
 class MainAdapter (
     private val dataSet: MutableList<TodoModel>
