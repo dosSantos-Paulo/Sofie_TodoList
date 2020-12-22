@@ -11,8 +11,8 @@ class TodoViewModel(
     private val repository: TodoRepository
 ) : ViewModel() {
 
-    fun getList () = liveData (Dispatchers.IO) {
-        val response = repository.getList()
+    fun getList (email: String) = liveData (Dispatchers.IO) {
+        val response = repository.getList(email)
         emit(response.data)
     }
 

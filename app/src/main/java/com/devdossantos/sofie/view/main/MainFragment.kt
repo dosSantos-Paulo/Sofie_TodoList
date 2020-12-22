@@ -34,14 +34,13 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         val navController = Navigation.findNavController(view)
         val addButton = view.findViewById<FloatingActionButton>(R.id.btn_addNewTodo_main)
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_main)
         val viewManager = LinearLayoutManager(view.context)
 
-        _listAdapter = MainAdapter(_todoList)
+        _listAdapter = MainAdapter(_todoList.asReversed())
 
         recyclerView.apply {
             setHasFixedSize(true)
@@ -55,7 +54,7 @@ class MainFragment : Fragment() {
             TodoViewModel.TodoViewModelFactory(TodoRepository())
         ).get(TodoViewModel::class.java)
 
-        _viewModel.getList().observe(viewLifecycleOwner, {
+        _viewModel.getList(EMAIL).observe(viewLifecycleOwner, {
             _todoList.addAll(it)
             _listAdapter.notifyDataSetChanged()
         })
@@ -66,5 +65,9 @@ class MainFragment : Fragment() {
             _todoList.clear()
         }
 
+    }
+
+    companion object {
+        const val EMAIL = "paulo.dossantos@hotmail.com"
     }
 }
