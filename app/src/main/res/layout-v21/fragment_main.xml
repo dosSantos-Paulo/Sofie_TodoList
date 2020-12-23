@@ -25,7 +25,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/zeroDP"
         android:layout_marginStart="@dimen/defautPadding"
-        android:layout_marginLeft="@dimen/defautPadding"
         android:layout_marginTop="@dimen/defautPadding"
         android:layout_marginBottom="@dimen/defautPadding"
         app:layout_constraintBottom_toBottomOf="parent"

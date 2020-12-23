@@ -98,6 +98,6 @@ class MainFragment : Fragment() {
 
     companion object {
         const val EMAIL = "paulo.dossantos@hotmail.com"
-        const val SDK_VERSION = 16
+        const val SDK_VERSION = 28
     }
 }
