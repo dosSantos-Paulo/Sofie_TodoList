@@ -24,9 +24,9 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:background="@color/totalTranslucent"
+                android:contentDescription="@string/close_icon"
                 android:src="@drawable/ic_baseline_close_24"
-                android:tint="@color/defaultBackGround"
-                android:contentDescription="@string/close_icon" />
+                android:tint="@color/defaultBackGround" />
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="0dp"
@@ -41,9 +41,9 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:background="@color/totalTranslucent"
+                android:contentDescription="@string/send_assignment_icon"
                 android:src="@drawable/ic_baseline_check_24"
-                android:tint="@color/defaultBackGround"
-                android:contentDescription="@string/send_assignment_icon" />
+                android:tint="@color/defaultBackGround" />
 
         </LinearLayout>
 
@@ -67,11 +67,12 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:textColor="@color/textPrimary"
             android:background="@color/totalTranslucent"
             android:drawableTint="@color/totalTranslucent"
             android:foregroundTint="@color/totalTranslucent"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@color/textPrimary"
             app:backgroundTint="@color/totalTranslucent" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -92,13 +93,13 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/totalTranslucent"
+            android:drawableTint="@color/totalTranslucent"
+            android:foregroundTint="@color/totalTranslucent"
             android:gravity="center_horizontal"
             android:inputType="text"
             android:textColor="@color/textPrimary"
             android:textSize="@dimen/NomeDaTarefa"
-            android:background="@color/totalTranslucent"
-            android:drawableTint="@color/totalTranslucent"
-            android:foregroundTint="@color/totalTranslucent"
             app:backgroundTint="@color/totalTranslucent" />
 
     </com.google.android.material.textfield.TextInputLayout>
