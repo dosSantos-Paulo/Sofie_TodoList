@@ -12,6 +12,3 @@ Aplicativo gerenciador de tarefas, com comunicação com API externa
 >
 > - buildSrc/src/main/java/Dependencies.kt (sdk_version -> mudar para versão a ser testada)
 >
-> - app/src/main/java/view/main/MainFragment.kt (companion object -> SDK_VERSION -> mudar para versão a ser testada)
->
->
