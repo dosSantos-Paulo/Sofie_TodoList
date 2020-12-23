@@ -65,7 +65,7 @@ class MainFragment : Fragment() {
 
         val viewManager = LinearLayoutManager(view.context)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView_main)
-        _listAdapter = MainAdapter(_todoList.asReversed())
+        _listAdapter = MainAdapter(_todoList)
 
         recyclerView.apply {
             setHasFixedSize(true)
