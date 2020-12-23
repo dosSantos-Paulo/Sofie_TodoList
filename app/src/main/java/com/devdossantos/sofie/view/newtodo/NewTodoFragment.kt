@@ -17,6 +17,7 @@ import com.devdossantos.sofie.oldversionrequest.post.IPost
 import com.devdossantos.sofie.oldversionrequest.post.PostApi
 import com.devdossantos.sofie.repository.TodoRepository
 import com.devdossantos.sofie.view.main.MainFragment
+import com.devdossantos.sofie.view.main.MainFragment.Companion.SDK_VERSION
 import com.devdossantos.sofie.viewmodel.TodoViewModel
 import com.google.android.material.textfield.TextInputLayout
 
@@ -62,7 +63,7 @@ class NewTodoFragment : Fragment() {
                     todoDescription!!.text.toString()
                 )
 
-                if (MainFragment.SDK_VERSION <= 21){
+                if (SDK_VERSION <= 21){
 
                     postApi(newPost, view)
 
