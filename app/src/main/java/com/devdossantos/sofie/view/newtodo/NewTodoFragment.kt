@@ -12,7 +12,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.devdossantos.sofie.R
 import com.devdossantos.sofie.model.post.Post
+import com.devdossantos.sofie.model.post.PostResponse
+import com.devdossantos.sofie.oldversionrequest.post.IPost
+import com.devdossantos.sofie.oldversionrequest.post.PostApi
 import com.devdossantos.sofie.repository.TodoRepository
+import com.devdossantos.sofie.view.main.MainFragment
 import com.devdossantos.sofie.viewmodel.TodoViewModel
 import com.google.android.material.textfield.TextInputLayout
 
@@ -20,6 +24,7 @@ import com.google.android.material.textfield.TextInputLayout
 class NewTodoFragment : Fragment() {
 
     private lateinit var _viewModel: TodoViewModel
+    private lateinit var _view: View
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +35,8 @@ class NewTodoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        _view = view
 
         val navController = Navigation.findNavController(view)
         val closeButton = view.findViewById<ImageButton>(R.id.btn_cancelNewTodo_newTodo)
@@ -55,7 +62,14 @@ class NewTodoFragment : Fragment() {
                     todoDescription!!.text.toString()
                 )
 
-                getViewModel(newPost, view)
+                if (MainFragment.SDK_VERSION <= 21){
+
+                    postApi(newPost, view)
+
+                } else if (MainFragment.SDK_VERSION > 21) {
+                    getViewModel(newPost, view)
+                }
+
 
                 email.text.clear()
                 todo.text.clear()
@@ -82,6 +96,14 @@ class NewTodoFragment : Fragment() {
             todoDescription?.error = getString(R.string.todoDescriptionError)
         }
 
+    }
+
+    private fun postApi(newPost: Post, view: View) {
+        PostApi.postData(newPost, view.context, object : IPost {
+            override fun postTodo(post: PostResponse) {
+                postResponse(post.success, view)
+            }
+        })
     }
 
     private fun getViewModel(newPost: Post, view: View) {
@@ -115,6 +137,5 @@ class NewTodoFragment : Fragment() {
     }
 
     private fun isNullText(editText: EditText?) = editText?.text.isNullOrEmpty()
-
 
 }
