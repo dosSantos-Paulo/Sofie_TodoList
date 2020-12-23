@@ -1,5 +1,6 @@
 package com.devdossantos.sofie.view.newtodo
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -63,11 +64,11 @@ class NewTodoFragment : Fragment() {
                     todoDescription!!.text.toString()
                 )
 
-                if (SDK_VERSION <= 21){
+                if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP){
 
                     postApi(newPost, view)
 
-                } else if (MainFragment.SDK_VERSION > 21) {
+                } else if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
                     getViewModel(newPost, view)
                 }
 
