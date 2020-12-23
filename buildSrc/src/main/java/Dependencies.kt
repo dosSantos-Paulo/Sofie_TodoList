@@ -1,5 +1,6 @@
 object Versions {
-    const val sdk_version = 28
+//    Build.VERSION.SDK_INT -> Unsolved
+    val sdk_version = 27
 
     val retrofit = getRetrofitVersion()
     val okHttp = getOkHttpVersion()

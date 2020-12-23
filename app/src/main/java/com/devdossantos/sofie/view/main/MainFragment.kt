@@ -1,5 +1,6 @@
 package com.devdossantos.sofie.view.main
 
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -35,17 +36,19 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val version = Build.VERSION.SDK_INT
+
 
         val navController = Navigation.findNavController(view)
         val addButton = view.findViewById<FloatingActionButton>(R.id.btn_addNewTodo_main)
 
         getRecyclearView(view)
 
-        if (SDK_VERSION <= 21) {
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP) {
 
             getCallbackApi(view)
 
-        } else if (SDK_VERSION > 21) {
+        } else if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
 
             getViewModel()
 
